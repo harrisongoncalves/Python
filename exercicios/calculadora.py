@@ -29,4 +29,5 @@ while True:
 sinal = sinal.strip()
 sinal = sinal.lower()
 print(operacao(n1, n2))
+alterado
 
