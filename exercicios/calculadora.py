@@ -1,5 +1,7 @@
 import time
 
+operacoes = ["soma", "subtracao", "multiplicacao", "divisao"]
+
 def operacao(n1, n2):
     if sinal == "+" or sinal == "soma":
         resultado = n1 + n2
@@ -7,27 +9,26 @@ def operacao(n1, n2):
     elif sinal == "-" or sinal == "subtracao":
         resultado = n1 - n2
         return resultado
-    elif sinal == "*" or sinal == "multiplicação":
+    elif sinal == "*" or sinal == "multiplicacao":
         resultado = (n1 * n2)
         return resultado
-    elif sinal == "/" or sinal == "divisão":
+    elif sinal == "/" or sinal == "divisao":
         resultado = n1 / n2
         return resultado
+    if sinal != operacoes:
+        return ("Opção inválida!")
 
 while True:
-    try:
-        n1 = float(input("Digite o primeiro número: "))
-        sinal = input("Agora digite o sinal, dentre as seguintes opções: soma: + subtracao: - multiplicação: * divisão: / : ")
-        n2 = float(input("Digite o segundo número: "))
+    n1 = float(input("Digite o primeiro número: "))
+    sinal = input("Agora digite o sinal, dentre as seguintes opções: soma: + subtracao: - multiplicacao: * divisao: / : ")
+    n2 = float(input("Digite o segundo número: "))
         
-    except ValueError:
-        print("Opção inválida.")
-        time.sleep(1.25)
-    else:
-        break
 
-sinal = sinal.strip()
-sinal = sinal.lower()
-print(operacao(n1, n2))
-alterado
-
+    if n2 == 0 and sinal == "/" or sinal == "divisao":
+        print("Não é possível dividir por 0")
+        time.sleep(1)
+        continue
+    
+    sinal = sinal.strip()
+    sinal = sinal.lower()
+    print(operacao(n1, n2))
