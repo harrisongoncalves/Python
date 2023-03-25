@@ -16,7 +16,7 @@ cotacao_euro_para_dolar = float(cotacoes['EURUSD']["bid"])
 cotacao_dolar_para_euro = float(cotacoes['USDEUR']["bid"])
 
 def continuar():
-    while True:
+    while True: 
         novamente = input("Deseja realizar outra conversão? (s/n): ")
         if novamente == 'n':
             sair()
@@ -61,7 +61,6 @@ def main():
                     print(f"Você possui: U$ {realdolar:.2f}")
                     time.sleep(0.5)
                     continuar()
-
                 except ValueError:
                     print("Número inválido.")
                     time.sleep(1)
@@ -77,7 +76,6 @@ def main():
                     print(f"Você possui: R$ {dolarreal:.2f}")
                     time.sleep(0.5)
                     continuar()
-
                 except ValueError:
                     print("Número inválido.")
                     time.sleep(1)
@@ -91,7 +89,6 @@ def main():
                     print(f"Você possui: EUR€ {realeuro:.2f}")
                     time.sleep(0.5)
                     continuar()
-
                 except ValueError:
                     print("Número inválido.")
                     time.sleep(1)
@@ -105,7 +102,6 @@ def main():
                     print(f"Você possui: R$ {euroreal:.2f}")
                     time.sleep(0.5)
                     continuar()
-
                 except ValueError:
                     print("Número inválido.")
                     time.sleep(1)
@@ -119,7 +115,6 @@ def main():
                     print(f"Você possui: EUR€ {dolareuro:.2f}")
                     time.sleep(0.5)
                     continuar()
-                
                 except ValueError:
                     print("Número inválido.")
                     time.sleep(1)
@@ -133,7 +128,6 @@ def main():
                     print(f"Você possui: U$ {eurodolar:.2f}")
                     time.sleep(0.5)
                     continuar()
-
                 except ValueError:
                     print("Número inválido.")
                     time.sleep(1)
