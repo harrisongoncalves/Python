@@ -43,14 +43,6 @@ def main():
             print("Não é possível dividir por 0")
             time.sleep(1)
             continue
-        
-        sinal = sinal.strip()
-        sinal = sinal.lower()
-        resultado = operacao.operacao(n1, n2, sinal)
-        if resultado.is_integer():
-            print("O resultado é: {:,}".format(int(resultado)).replace('.', ','))
-            continuar()
-        else:
-            print("O resultado é: {:,}".format(resultado).replace('.', ','))
-            continuar()
+    
+        continuar()
 main()
