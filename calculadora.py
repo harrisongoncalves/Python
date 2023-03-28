@@ -12,7 +12,7 @@ def continuar():
         else:
             print("Opção inválida.")
             continue
-    
+
 def sair():
     print("Obrigado por utilizar o meu programa.")
     time.sleep(1.5)
@@ -37,12 +37,18 @@ def main():
         except ValueError:
             print("Por favor, digite um número válido.")
             continue
-            
+
 
         if n2 == 0 and sinal == "/" or sinal == "divisao":
             print("Não é possível dividir por 0")
             time.sleep(1)
             continue
-    
-        continuar()
+
+        resultado = operacao.operacao(n1, n2, sinal)
+        if resultado.is_integer():
+            print("O resultado é: {:,}".format(int(resultado)).replace('.', ','))
+            continuar()
+        else:
+            print("O resultado é: {:,}".format(resultado).replace('.', ','))
+            continuar()
 main()
