@@ -1,12 +1,15 @@
 import time
 import requests
 
-### futuramente tratar os erros requests
 
-cotacoes = requests.get("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,EUR-USD,BRL-USD,USD-EUR,BRL-EUR")
-cotacoes = cotacoes.json()
-
-### valor das cotacoes
+try:
+    cotacoes = requests.get("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,EUR-USD,BRL-USD,USD-EUR,BRL-EUR")
+    cotacoes.raise_for_status()
+    cotacoes = cotacoes.json()
+except requests.exceptions.RequestException as e:
+    print(f"Não foi possível obter as cotações: {e}")
+except requests.exceptions.HTTPError as e:
+    print(f"Erro HTTP: {e}")
 
 cotacao_dolar_para_real = float(cotacoes['USDBRL']["bid"])
 cotacao_euro_para_real = float(cotacoes['EURBRL']["bid"])
