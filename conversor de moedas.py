@@ -24,6 +24,7 @@ def continuar():
         if novamente == 'n':
             sair()
         elif novamente == 's':
+            print("\n")
             main()
         else:
             print("Opção inválida.")
