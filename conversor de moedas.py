@@ -50,7 +50,7 @@ def main():
     
     while True:
         try:
-            moeda = int(input("Digite a sua opção: "))
+            moeda = int(input("Digite a sua opção: ").replace(",","."))
         except ValueError:
             print("Opção inválida, escolha entre 1 e 7.")
             time.sleep(1)
@@ -59,9 +59,9 @@ def main():
         if moeda == 1:
             while True:
                 try:
-                    realdolarA = float(input("Digite o valor que você quer transformar em dólar: R$ "))
+                    realdolarA = float(input("Digite o valor que você quer transformar em dólar: R$ ").replace(",","."))
                     realdolar = float(realdolarA) * float(cotacao_real_para_dolar)
-                    print(f"Você possui: U$ {realdolar:.2f}")
+                    print(f"Você possui: U$ {realdolar:.2f}".replace(".",","))
                     time.sleep(0.5)
                     continuar()
                 except ValueError:
@@ -74,9 +74,9 @@ def main():
         if moeda == 2:
             while True:
                 try:
-                    dolarrealA = float(input("Digite o valor que você quer transformar em real: US$ "))
+                    dolarrealA = float(input("Digite o valor que você quer transformar em real: US$ ").replace(",","."))
                     dolarreal = float(dolarrealA) * float(cotacao_dolar_para_real)
-                    print(f"Você possui: R$ {dolarreal:.2f}")
+                    print(f"Você possui: R$ {dolarreal:.2f}".replace(".",","))
                     time.sleep(0.5)
                     continuar()
                 except ValueError:
@@ -87,9 +87,9 @@ def main():
         if moeda == 3:
             while True:
                 try:
-                    realeuroA = float(input("Digite o valor que você quer transformar em euro: R$ "))
+                    realeuroA = float(input("Digite o valor que você quer transformar em euro: R$ ").replace(",","."))
                     realeuro = float(realeuroA) * float(cotacao_real_para_euro)
-                    print(f"Você possui: EUR€ {realeuro:.2f}")
+                    print(f"Você possui: EUR€ {realeuro:.2f}".replace(".",","))
                     time.sleep(0.5)
                     continuar()
                 except ValueError:
@@ -100,9 +100,9 @@ def main():
         if moeda == 4:
             while True:
                 try:
-                    eurorealA = float(input("Digite o valor que você quer transformar em real: EUR€ "))
+                    eurorealA = float(input("Digite o valor que você quer transformar em real: EUR€ ").replace(",","."))
                     euroreal = float(eurorealA) * float(cotacao_euro_para_real)
-                    print(f"Você possui: R$ {euroreal:.2f}")
+                    print(f"Você possui: R$ {euroreal:.2f}".replace(".",","))
                     time.sleep(0.5)
                     continuar()
                 except ValueError:
@@ -113,9 +113,9 @@ def main():
         if moeda == 5:
             while True:
                 try:
-                    dolareuroA = float(input("Digite o valor que você quer transformar em euro: US$ "))
+                    dolareuroA = float(input("Digite o valor que você quer transformar em euro: US$ ").replace(",","."))
                     dolareuro = (float(dolareuroA) * (float(cotacao_dolar_para_euro)))
-                    print(f"Você possui: EUR€ {dolareuro:.2f}")
+                    print(f"Você possui: EUR€ {dolareuro:.2f}".replace(".",","))
                     time.sleep(0.5)
                     continuar()
                 except ValueError:
@@ -126,9 +126,9 @@ def main():
         if moeda == 6:
             while True:
                 try:
-                    eurodolarA = float(input("Digite o valor que você quer transformar em dólar: EUR€ "))
+                    eurodolarA = float(input("Digite o valor que você quer transformar em dólar: EUR€ ").replace(",","."))
                     eurodolar = float(eurodolarA) * float(cotacao_euro_para_dolar)
-                    print(f"Você possui: U$ {eurodolar:.2f}")
+                    print(f"Você possui: U$ {eurodolar:.2f}".replace(".",","))
                     time.sleep(0.5)
                     continuar()
                 except ValueError:
